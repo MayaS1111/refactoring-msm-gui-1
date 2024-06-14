@@ -12,10 +12,9 @@
 #
 class Director < ApplicationRecord
 
-  def films
+  def filmography
     my_id = self.id
     matching_records =  Movie.where({:director_id => my_id})
-
     movies = matching_records.order({ :year => :asc })
 
     return movies
